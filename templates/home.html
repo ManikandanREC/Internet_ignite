@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - R Bulk Transporters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: #e0f7fa; /* Light cyan background */
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #00796b; /* Darker teal color */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Added text shadow */
+        }
+        .options {
+            display: flex;
+            gap: 20px;
+            opacity: 0; /* Hidden initially */
+            transform: translateY(20px); /* Slightly moved down initially */
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .option {
+            background-color: #004d40; /* Darker teal color */
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .option:hover {
+            background-color: #00251a; /* Even darker teal for hover effect */
+            transform: scale(1.05); /* Slight zoom effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+        }
+        .option:active {
+            transform: scale(0.98); /* Slight shrink effect on click */
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            document.querySelector('.options').style.opacity = 1;
+            document.querySelector('.options').style.transform = 'translateY(0)';
+        };
+    </script>
+</head>
+<body>
+    <h1>Welcome to R Bulk Transporters!</h1>
+    <div class="options">
+        <a href="{{ url_for('admin_login') }}" class="option">Personalized Producer</a>
+        <a href="{{ url_for('consumer_login') }}" class="option">Consumer Login</a>
+    </div>
+</body>
+</html>

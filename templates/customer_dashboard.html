@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raichu</title>
+    <link rel="stylesheet" href="static/customer_home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">R Bulk Transporters</div>
+        <nav>
+            <a href="{{ url_for('admin_login') }}">Admin Dashboard</a>
+        
+            <!-- Show the login button only if the user is NOT logged in -->
+            {% if not session.get('consumer_logged_in') %}
+                <a href="{{ url_for('consumer_login') }}">Login</a>
+            {% endif %}
+        
+            <!-- Show the logout button only if the user is logged in -->
+            {% if session.get('consumer_logged_in') %}
+                <a href="{{ url_for('consumer_logout') }}">Logout</a>
+            {% endif %}
+        </nav>
+        
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <img src="/static/images/c1.jpg" alt="Promo 1" class="carousel-item active">
+                    <img src="/static/images/c2.jpg" alt="Promo 2" class="carousel-item">
+                    <img src="/static/images/c3.jpg" alt="Promo 3" class="carousel-item">
+                </div>
+                <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="product-listings">
+            <h2>Product Types</h2>
+            <div class="product-grid">
+                <a href="{{ url_for('product_2') }}">
+                    <div class="product-item1">
+                        <p class="materials">Agriculture Materials</p>
+                    </div>
+                </a>
+                <a href="{{ url_for('building_products') }}">
+                    <div class="product-item2">
+                        <p class="materials" >Builiding material</p>
+                    </div>
+                </a>
+                <a href="{{ url_for('product_3') }}">
+                    <div class="product-item3">
+                        <p class="materials">Chemical and industrial material</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('careers') }}">Careers</a>
+            <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+            <a href="{{ url_for('terms_of_service') }}">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="{{ url_for('static', filename='images/facebook_icon.webp') }}" alt="Facebook"></a>
+            <a href="https://www.instagram.com/manickvishal14/profilecard/?igsh=ZDJucGJ1N2ZoaDJt"><img src="{{ url_for('static', filename='images/instagram_icon.png') }}" alt="Instagram"></a>
+        </div>
+    </footer>
+    
+
+    <script src="/static/home_js.js"></script>
+</body>
+</html>

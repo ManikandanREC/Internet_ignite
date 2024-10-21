@@ -1,0 +1,216 @@
+/* Global Styles */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    font-family: "Josefin Sans", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+header nav a {
+    margin-left: 30px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #1abc9c;
+}
+
+/* Main Content Styles */
+main {
+    padding: 40px 5%;
+    flex: 1;
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    height: 400px;
+    min-width: 100%;
+    object-fit: cover;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-control.prev {
+    left: 20px;
+}
+
+.carousel-control.next {
+    right: 20px;
+}
+
+/* Product Listings Styles */
+.product-listings {
+    margin-bottom: 40px;
+}
+
+.product-listings h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-content: center;
+}
+
+.product-item1,
+.product-item2,
+.product-item3 {
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-item1:hover,
+.product-item2:hover,
+.product-item3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.materials {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #333;
+    color: white;
+    padding: 40px 5%;
+    text-align: center;
+}
+
+footer .footer-links {
+    margin-bottom: 20px;
+}
+
+footer .footer-links a, 
+footer .social-media a {
+    margin: 0 15px;
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover,
+footer .social-media a:hover {
+    color: #ffffff;
+}
+
+.social-media img {
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 20px;
+    }
+
+    header nav a {
+        margin: 0 10px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product-item1 {
+    background-image: url(/static/images/agri_1.jpg);
+}
+.product-item2 {
+    background-image: url(/static/images/building1_img.jpeg);
+}
+.product-item3 {
+    background-image: url(/static/images/chemical_2.webp);
+}

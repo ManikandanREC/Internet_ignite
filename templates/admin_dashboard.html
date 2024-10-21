@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - R Bulk Transporters</title>
+    <link rel="stylesheet" href="static/customer_home.css">
+    <link rel="stylesheet" href="static/admin_dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="logo">R Bulk Transporters - Admin Dashboard</div>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('admin_logout') }}">Logout</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="orders-section">
+            <h2>Customer Orders</h2>
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Quantity</th>
+                        <th>Location</th>
+                        <th>Delivery Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td>{{ order.quantity }} tons</td>
+                        <td>{{ order.location }}</td>
+                        <td>{{ order.delivery_time }}</td>
+                        <td>
+                            <!-- Status Update Form -->
+                            <form action="{{ url_for('update_status', order_id=order.id) }}" method="POST">
+                            <select name="status">
+                            <option value="pending" {% if order.status == 'pending' %}selected{% endif %}>Pending</option>
+                            <option value="processing" {% if order.status == 'processing' %}selected{% endif %}>Processing</option>
+                            <option value="shipped" {% if order.status == 'shipped' %}selected{% endif %}>Shipped</option>
+                            <option value="delivered" {% if order.status == 'delivered' %}selected{% endif %}>Delivered</option>
+                            </select>
+                            <button type="submit">Update Status</button>
+                            </form>
+
+<!-- Stock Update Form -->
+                            <!--form action="{{ url_for('update_stock', order_id=order.id) }}" method="POST">
+                            <input type="number" name="new_quantity" placeholder="New Stock Level" required>
+                            <button type="submit">Update Stock</button>
+                            </form-->
+
+                        </td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 R Bulk Transporters</p>
+    </footer>
+</body>
+</html>

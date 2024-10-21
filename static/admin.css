@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .login-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: fadeInUp 1s forwards, bounceIn 1s forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    color: #ff416c;
+    font-size: 2rem;
+    animation: typewriter 2s steps(40, end);
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  input:focus {
+    background-color: #e0e0e0;
+    outline: none;
+  }
+  
+  button {
+    background-color: #ff416c;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff4b2b;
+    transform: scale(1.05);
+  }
+  

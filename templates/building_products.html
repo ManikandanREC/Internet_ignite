@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rithi</title>
+    <link rel="stylesheet" href="static/building_mats.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('admin_dashboard') }}">Admin Login</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="product-listings">
+            <h2>Product types</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <a href="{{ url_for('product_1') }}">
+                        <img src="static/Images/b1.webp" alt="Product 1">
+                        <p>Product 1</p>
+                        <p>Rs 1000 per ton</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="{{ url_for('product_2') }}">
+                        <img src="static/Images/b2.jpg" alt="Product 2">
+                        <p>Product 2</p>
+                        <p>Rs 1000 per ton</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="{{ url_for('product_3') }}">
+                        <img src="static/Images/b3.jpg" alt="Product 3">
+                        <p>Product 3</p>
+                        <p>Rs 1000 per ton</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="{{ url_for('product_4') }}">
+                        <img src="static/Images/b4.jpg" alt="Product 4">
+                        <p>Product 4</p>
+                        <p>Rs 1000 per ton</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="{{ url_for('product_5') }}">
+                        <img src="static/Images/b5.jpg" alt="Product 5">
+                        <p>Product 5</p>
+                        <p>Rs 1000 per ton</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('careers') }}">Careers</a>
+            <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+            <a href="{{ url_for('terms_of_service') }}">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="{{ url_for('static', filename='images/facebook_icon.webp') }}" alt="Facebook"></a>
+            <a href="https://www.instagram.com/manickvishal14/profilecard/?igsh=ZDJucGJ1N2ZoaDJt"><img src="{{ url_for('static', filename='images/instagram_icon.png') }}" alt="Instagram"></a>
+        </div>
+    </footer>
+    
+    <script src="/static/home_js.js"></script>
+</body>
+</html>
